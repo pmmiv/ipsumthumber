@@ -21,7 +21,9 @@ class Home extends Component {
         <Row>
            <Col size="sm-12">
             <Jumbotron>
-              <h1>Home, Bitch</h1>
+              <h1>Welcome to the Ipsum Thumber</h1>
+              <p>Where you can sample a few cool ipsums for your next website.</p>
+              <p>Use the nav bar to select how you want to meet your next ipsum.</p>
             </Jumbotron>
           </Col>
         </Row>

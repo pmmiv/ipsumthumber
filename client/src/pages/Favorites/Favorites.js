@@ -27,7 +27,8 @@ class Favorites extends Component {
     return (
       <Container fluid>
         <Row>
-           <Col size="sm-12">
+          <Col size="sm-1" />
+          <Col size="sm-10">
             <Jumbotron>
               <h1>Favorite Ipsums</h1>
             </Jumbotron>
@@ -36,11 +37,13 @@ class Favorites extends Component {
                 {this.state.favorites.map(favorite => (
                   <ListItem key={favorite._id}>
                     <Link to={"/ipsums/" + favorite._id}>
-                    </Link>
                       <strong>
                         {favorite.title + " "}
                       </strong>
-                      <a href={favorite.url}>Try me!</a>
+                    </Link>
+                      <a href={favorite.url} target="_blank">Try me!</a>
+                      <br></br>
+                      <p>{favorite.sample}</p>
                   </ListItem>
                 ))}
               </List>
@@ -48,6 +51,7 @@ class Favorites extends Component {
               <h3>No Results to Display</h3>
             )}
           </Col>
+          <Col size="sm-1" />
         </Row>
       </Container>
     );

@@ -62,7 +62,7 @@ class Random extends Component {
               </p>
               <button className="btn btn-danger" onClick={this.loadIpsum}>Next Random Ipsum</button>
               <span> </span>
-              <a className="btn btn-primary" href={this.state.currentIpsum.url}>Try me</a>
+              <a className="btn btn-primary" target="_blank" href={this.state.currentIpsum.url}>Try me</a>
               <span> </span>
               <button className="btn btn-success" onClick={() => this.favorite(this.state.currentIpsum._id)}>
 

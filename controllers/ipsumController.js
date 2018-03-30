@@ -9,7 +9,7 @@ module.exports = {
   },
   findFavorites: function(req, res) {
     db.Ipsum
-      .distinct(favorite: true)
+      .find({ favorite: true})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
@@ -20,9 +20,16 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
-    db.Ipsum
+    console.log(req.body);
+    db.Comment
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
+      .then(function(dbModel) {
+        return db.Ipsum.findOneAndUpdate({ _id: req.params.id }, { comment: dbModel._id }, { new: true });
+      })
+      .then(function(dbArticle) {
+        // If we were able to successfully update an Article, send it back to the client
+        res.json(dbArticle);
+      })
       .catch(err => res.status(422).json(err));
   },
   update: function(req, res) {

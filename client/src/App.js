@@ -2,6 +2,7 @@ import React from "react";
 import All from "./pages/All";
 import Home from "./pages/Home";
 import Random from "./pages/Random";
+import One from "./pages/One";
 import NoMatch from "./pages/NoMatch";
 import Favorites from "./pages/Favorites";
 import Nav from "./components/Nav";
@@ -17,6 +18,7 @@ const App = () =>
 				<Route path="/home" exact component={Home} />
 				<Route path="/all" exact component={All} />
 				<Route path="/random" component={Random} />
+				<Route path="/ipsums/:id" component={One} />
 				<Route path="/favorites" component={Favorites} />
 				<Route component={NoMatch} />
 			</Switch>

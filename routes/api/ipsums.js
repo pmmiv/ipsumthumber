@@ -3,11 +3,10 @@ const ipsumController = require("../../controllers/ipsumController");
 
 // Matches with "/api/ipsums"
 router.route("/")
-  .get(ipsumController.findAll)
-  .post(ipsumController.create);
+  .get(ipsumController.findAll);
 
-router.rout("/favorites")
-	.get(ipsumController.findFavorites)
+router.route("/favorites")
+	.get(ipsumController.findFavorites);
 
 // Matches with "/api/ipsums/:id"
 router
@@ -15,5 +14,9 @@ router
   .get(ipsumController.findById)
   .put(ipsumController.update)
   .delete(ipsumController.remove);
+
+router
+  .route("/comment/:id")
+  .post(ipsumController.create);
 
 module.exports = router;

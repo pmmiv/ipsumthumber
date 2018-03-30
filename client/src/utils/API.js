@@ -21,8 +21,8 @@ export default {
     return axios.put("/api/ipsums/" + id, query);
   },
   
-  // Saves a book to the database
-  saveIpsum: function(ipsumData) {
-    return axios.post("/api/books", ipsumData);
+  // Saves a comment to the database
+  saveComment: function(ipsumData, id) {
+    return axios.post("/api/comment/"+id, ipsumData);
   }
 };
